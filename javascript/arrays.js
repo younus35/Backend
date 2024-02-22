@@ -21,4 +21,4 @@ console.log(toArray(1,2,3));
 console.log(toArray(1,2,3,4));
 //The rest operator in javaScript allows a function to take an indefinite number of arguments and bundle them in an array,
 //thus allowing us to write functions that can accept a variable number of arguments,
-//irrespective of the number of parameters defined. 
+//irrespective of the number of parameters defined

@@ -15,6 +15,5 @@ const student = {
         console.log("hi i am good with "+this.main);
     }
 };
-
 console.log(student);
 student.subject();
