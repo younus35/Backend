@@ -1,5 +1,5 @@
 const http = require('http');
-
+const fs = require('fs');
 const server = http.createServer((req,res)=>{
     // console.log(req.url); console.log(req.method); console.log(req.headers);
     const url = req.url;
@@ -12,6 +12,7 @@ const server = http.createServer((req,res)=>{
     res.write('</html>')
     return res.end();
     }
+    
     if(url==='/home' && req.method==='POST'){
     res.write('<html>')
     res.write('<head><title>My First Page</title></head>')
