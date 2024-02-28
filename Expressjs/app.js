@@ -2,18 +2,19 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next)=>{
-        console.log('in the middleware');
-        next();//moves to next middleware
+const bodyParser = require('body-parser');
+
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.use('/admin',adminRoutes);
+app.use('/shop',shopRoutes);
+
+app.use((req,res,next)=>{
+    res.status(404).send('<h1> page not found</h1>')
 });
 
-app.use((req, res, next)=>{
-    console.log('in the another middleware');
-    res.send('<h1> hello from Express</h1>');//like res.write
-});
-
-// const server = http.createServer(app);
-
-// server.listen(3000);
 app.listen(3000);
 
