@@ -9,6 +9,14 @@ res.send() is used in Express.js to send a response to the client with the speci
 <h2>app.listen()</h2><br>
 app.listen(3000) tells the Express.js application to start listening for incoming HTTP requests on port 3000. Behind the <br>scenes, it creates a server and binds it to the specified port, allowing the application to handle incoming requests<br> 
 from clients.<br>
+<h2>body parser</h2><br>
+The body parser is a middleware used in web development frameworks like Express.js for parsing incoming request bodies. It's<br> used to extract data from the body of HTTP requests, such as form data or JSON, and make it accessible to the <br>application for processing.<br>
+
+
+
+
+
+
 
 
 
