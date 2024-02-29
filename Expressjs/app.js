@@ -4,9 +4,13 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
+//routes
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const feedbackRoutes = require('./routes/feedback');
+
+//controllers
+const errorController = require('./controllers/error');
 
 const path = require('path')
 
@@ -15,13 +19,11 @@ app.use(express.static(path.join(__dirname, 'public'))); // to use css file stat
 
 // app.use('/admin',adminRoutes);
 // app.use('/shop',shopRoutes);
-app.use(adminRoutes);
-app.use(shopRoutes);
+app.use('/admin',adminRoutes);
+app.use('/shop',shopRoutes);
 app.use(feedbackRoutes);
 
-app.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
-});
+app.use(errorController.error404);
 
 app.listen(3000);
 
